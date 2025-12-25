@@ -13,10 +13,27 @@ npm install github:zos-apps/terminal
 ## Usage
 
 ```tsx
-import ZTerminal from '@zos-apps/terminal';
+import App from '@zos-apps/terminal';
 
-function App() {
-  return <ZTerminal />;
+function MyApp() {
+  return <App />;
+}
+```
+
+## Package Spec
+
+App metadata is defined in `package.json` under the `zos` field:
+
+```json
+{
+  "zos": {
+    "id": "ai.hanzo.terminal",
+    "name": "Terminal",
+    "icon": "⬛",
+    "category": "developer",
+    "permissions": ["filesystem","shell"],
+    "installable": true
+  }
 }
 ```
 
