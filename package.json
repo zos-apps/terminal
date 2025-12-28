@@ -21,7 +21,27 @@
         "height": 500
       },
       "resizable": true
-    }
+    },
+    "about": "Command-line interface for system access and scripting.",
+    "help": [
+      "Type commands to execute",
+      "Tab for auto-complete",
+      "Use arrow keys for history"
+    ],
+    "docs": "https://zos-apps.github.io/terminal",
+    "site": "https://github.com/zos-apps/terminal",
+    "shortcuts": [
+      "Cmd+T New tab",
+      "Cmd+W Close tab",
+      "Ctrl+C Cancel"
+    ],
+    "features": [
+      "Multiple tabs",
+      "Themes",
+      "Shell selection",
+      "Command history",
+      "Auto-complete"
+    ]
   },
   "scripts": {
     "build": "tsup",
@@ -54,5 +74,13 @@
     "terminal",
     "macos",
     "desktop"
-  ]
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/zos-apps"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
