@@ -1,5 +1,5 @@
 {
-  "name": "@anthropic/terminal",
+  "name": "@zos-apps/terminal",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
@@ -11,9 +11,15 @@
     "icon": "💻",
     "category": "system",
     "description": "Command line interface",
-    "permissions": ["storage.local", "system.shell"],
+    "permissions": [
+      "storage.local",
+      "system.shell"
+    ],
     "window": {
-      "defaultSize": { "width": 800, "height": 500 },
+      "defaultSize": {
+        "width": 800,
+        "height": 500
+      },
       "resizable": true
     }
   },
@@ -30,5 +36,23 @@
     "@types/react-dom": "^18.3.0",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
-  }
+  },
+  "description": "Command line interface",
+  "homepage": "https://zos-apps.github.io/terminal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zos-apps/terminal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zos-apps/terminal/issues"
+  },
+  "author": "Hanzo AI",
+  "license": "MIT",
+  "keywords": [
+    "zos",
+    "app",
+    "terminal",
+    "macos",
+    "desktop"
+  ]
 }
