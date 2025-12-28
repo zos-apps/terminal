@@ -41,7 +41,26 @@
       "Shell selection",
       "Command history",
       "Auto-complete"
-    ]
+    ],
+    "screenshots": {
+      "hero": "screenshots/hero.png",
+      "images": [
+        "screenshots/1-main.png",
+        "screenshots/2-feature.png"
+      ]
+    },
+    "downloads": {
+      "web": "https://zos-apps.github.io/terminal"
+    },
+    "featured": true,
+    "tags": [
+      "system",
+      "utility",
+      "terminal"
+    ],
+    "releaseDate": "2024-12-28",
+    "support": "https://github.com/zos-apps/terminal/issues",
+    "changelog": "https://github.com/zos-apps/terminal/releases"
   },
   "scripts": {
     "build": "tsup",
