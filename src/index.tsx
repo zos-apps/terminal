@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 
 interface TerminalProps {
   onClose: () => void;
@@ -32,7 +32,7 @@ const COMMANDS: Record<string, (args: string[], fs: Record<string, string>) => s
   whoami: () => 'guest@zos',
   pwd: () => '/home/guest',
   
-  ls: (args, fs) => {
+  ls: (_args, fs) => {
     const entries = Object.keys(fs);
     if (entries.length === 0) return '';
     return entries.map(e => fs[e] === 'dir' ? `\x1b[34m${e}/\x1b[0m` : e).join('  ');
@@ -80,7 +80,7 @@ const COMMANDS: Record<string, (args: string[], fs: Record<string, string>) => s
 `,
 };
 
-const Terminal: React.FC<TerminalProps> = ({ onClose }) => {
+const Terminal: React.FC<TerminalProps> = ({ onClose: _onClose }) => {
   const [history, setHistory] = useState<HistoryEntry[]>([
     { command: '', output: 'Welcome to z/OS Terminal v1.0\nType "help" for available commands.\n' }
   ]);
@@ -106,7 +106,7 @@ const Terminal: React.FC<TerminalProps> = ({ onClose }) => {
 
     const parts = trimmed.split(/\s+/);
     const command = parts[0].toLowerCase();
-    const args = parts.slice(1);
+    const _args = parts.slice(1);
 
     let output = '';
     let isError = false;
@@ -119,7 +119,7 @@ const Terminal: React.FC<TerminalProps> = ({ onClose }) => {
     if (command === 'history') {
       output = commandHistory.map((c, i) => `${i + 1}  ${c}`).join('\n');
     } else if (COMMANDS[command]) {
-      output = COMMANDS[command](args, fs);
+      output = COMMANDS[command](_args, fs);
       setFs({ ...fs });
     } else {
       output = `zsh: command not found: ${command}`;
